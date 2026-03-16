@@ -65,3 +65,30 @@ Key columns include:
 
 ### Business Meaning
 This table represents the actual sales transactions and will serve as the central table for analyzing revenue, product demand, and sales performance.
+
+## Step 2.3 — Understanding the Products Table
+
+### What we did
+Explored the structure of the `products` table to understand the available product attributes.
+
+### Why we did it
+The products table provides detailed information about each product sold, including category, brand, and pricing information.
+
+### What we found
+The table contains product metadata including:
+
+- product ID
+- product name
+- category
+- department
+- brand
+- retail price
+- cost
+- distribution center
+
+The column `id` acts as the unique identifier for products.
+
+This column connects to `product_id` in the `order_items` table.
+
+### Business Meaning
+This table allows us to analyze sales performance by product, category, brand, and department. It will be essential for understanding which products drive the most revenue.
