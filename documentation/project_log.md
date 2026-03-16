@@ -127,6 +127,19 @@ Canada Goose Women Expedition Parka
 
 True Religion Men's Straight Jeans
 
+## Step 3 — Creating a Clean Sales Analysis View
+
+### What we did
+Created a reusable analytical view combining order_items and products tables.
+
+### Why we did it
+To create a clean dataset containing product sales information that can be reused for analysis and dashboards.
+
+### What we found
+The view combines product attributes with sales transaction data.
+
+### Business Meaning
+This view simplifies future analysis by providing a clean dataset of completed sales transactions with product information.
 Mountain Hardwear Men's Nilas Down Jacket
 
 Business Meaning
