@@ -92,3 +92,43 @@ This column connects to `product_id` in the `order_items` table.
 
 ### Business Meaning
 This table allows us to analyze sales performance by product, category, brand, and department. It will be essential for understanding which products drive the most revenue.
+
+## Step 2.4 — Identifying Top Revenue Products
+
+### What we did
+Joined the `order_items` table with the `products` table to analyze product sales and calculate revenue by product.
+
+### Why we did it
+To identify which products generate the highest revenue for the business.
+
+### SQL Query Used
+```sql
+SELECT
+    p.name AS product_name,
+    p.category,
+    COUNT(*) AS total_items_sold,
+    SUM(oi.sale_price) AS total_revenue
+FROM `bigquery-public-data.thelook_ecommerce.order_items` oi
+JOIN `bigquery-public-data.thelook_ecommerce.products` p
+ON oi.product_id = p.id
+GROUP BY product_name, category
+ORDER BY total_revenue DESC
+LIMIT 10;
+
+What we found
+
+The products generating the highest revenue include:
+
+The North Face Apex Bionic Soft Shell Jacket – Men's
+
+Nike Jordan Retro 11 Bred Bootie Socks
+
+Canada Goose Women Expedition Parka
+
+True Religion Men's Straight Jeans
+
+Mountain Hardwear Men's Nilas Down Jacket
+
+Business Meaning
+
+High-priced outerwear and premium apparel appear to drive a large portion of revenue. Retail managers may want to prioritize inventory availability for these products to avoid potential stockouts.
