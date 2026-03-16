@@ -43,3 +43,25 @@ These tables contain information about sales transactions, products, inventory l
 
 ### Business Meaning
 These tables allow us to analyze product demand, revenue performance, and inventory availability across distribution centers.
+
+## Step 2.2 — Understanding the Order Items Table
+
+### What we did
+Explored the structure of the `order_items` table to understand the columns and key identifiers used in the dataset.
+
+### Why we did it
+The `order_items` table contains the transactional sales data needed to analyze product demand and revenue performance.
+
+### What we found
+The table includes identifiers that connect sales transactions to other important tables in the dataset.
+
+Key columns include:
+
+- `order_id` → connects to the orders table
+- `user_id` → connects to the users table
+- `product_id` → connects to the products table
+- `inventory_item_id` → connects to the inventory_items table
+- `sale_price` → price of the product sold
+
+### Business Meaning
+This table represents the actual sales transactions and will serve as the central table for analyzing revenue, product demand, and sales performance.
