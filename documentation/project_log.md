@@ -142,6 +142,23 @@ The view combines product attributes with sales transaction data.
 This view simplifies future analysis by providing a clean dataset of completed sales transactions with product information.
 Mountain Hardwear Men's Nilas Down Jacket
 
-Business Meaning
+## Step 4.1 — Revenue by Product Category
+
+### What we did
+Analyzed total revenue and number of items sold by product category using the sales_product_analysis view.
+
+### Why we did it
+To identify which product categories contribute the most to overall revenue.
+
+### What we found
+The top revenue-generating categories include:
+- Outerwear & Coats
+- Jeans
+- Sweaters
+- Swimwear
+- Suits & Sports Coats
+
+### Business Meaning
+Higher-priced categories such as outerwear generate more revenue even with fewer sales. These categories should be prioritized for inventory planning and sales strategies.
 
 High-priced outerwear and premium apparel appear to drive a large portion of revenue. Retail managers may want to prioritize inventory availability for these products to avoid potential stockouts.
