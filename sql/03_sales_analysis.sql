@@ -32,3 +32,14 @@ SELECT
 FROM `nnamdi-hr-analytics-capstone.retail_analytics.sales_product_analysis`
 GROUP BY order_month
 ORDER BY order_month;
+
+-- Step 4.4: Revenue Trend Over Time
+
+SELECT
+    EXTRACT(YEAR FROM created_at) AS year,
+    EXTRACT(MONTH FROM created_at) AS month,
+    SUM(sale_price) AS total_revenue,
+    COUNT(*) AS total_items_sold
+FROM `nnamdi-hr-analytics-capstone.retail_analytics.sales_product_analysis`
+GROUP BY year, month
+ORDER BY year, month;
