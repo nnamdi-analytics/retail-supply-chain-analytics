@@ -161,4 +161,17 @@ The top revenue-generating categories include:
 ### Business Meaning
 Higher-priced categories such as outerwear generate more revenue even with fewer sales. These categories should be prioritized for inventory planning and sales strategies.
 
+## Step 4.3 — Revenue Trend Over Time
+
+### What we did
+Analyzed monthly revenue trends using the sales_product_analysis view.
+
+### Why we did it
+To understand how sales performance changes over time and identify any seasonal patterns.
+
+### What we found
+Revenue fluctuates over time, with a significant spike observed in April compared to other months.
+
+### Business Meaning
+Revenue shows fluctuations over time, with a noticeable spike in April. However, further analysis across the full time range is required to determine if this represents a seasonal trend or a one-time event.
 High-priced outerwear and premium apparel appear to drive a large portion of revenue. Retail managers may want to prioritize inventory availability for these products to avoid potential stockouts.
