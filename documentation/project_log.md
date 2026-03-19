@@ -7,6 +7,9 @@ Each step will include:
 - Why we did it
 - What we found
 - Business meaning
+
+---
+
 ## Step 2.1 — Dataset Overview
 
 ### What we did
@@ -26,9 +29,7 @@ To identify the tables relevant for retail sales and inventory analysis.
 - users
 
 ### What we found
-The dataset contains tables related to sales transactions, product information, customer activity, and distribution operations.
-
-However, not all tables are necessary for this analysis.
+The dataset contains tables related to sales transactions, product information, customer activity, and distribution operations. However, not all tables are necessary for this analysis.
 
 ### Tables selected for analysis
 The following tables were identified as most relevant for this project:
@@ -43,6 +44,8 @@ These tables contain information about sales transactions, products, inventory l
 
 ### Business Meaning
 These tables allow us to analyze product demand, revenue performance, and inventory availability across distribution centers.
+
+---
 
 ## Step 2.2 — Understanding the Order Items Table
 
@@ -66,6 +69,8 @@ Key columns include:
 ### Business Meaning
 This table represents the actual sales transactions and will serve as the central table for analyzing revenue, product demand, and sales performance.
 
+---
+
 ## Step 2.3 — Understanding the Products Table
 
 ### What we did
@@ -86,20 +91,36 @@ The table contains product metadata including:
 - cost
 - distribution center
 
-The column `id` acts as the unique identifier for products.
-
-This column connects to `product_id` in the `order_items` table.
+The column `id` acts as the unique identifier for products and connects to `product_id` in the `order_items` table.
 
 ### Business Meaning
-This table allows us to analyze sales performance by product, category, brand, and department. It will be essential for understanding which products drive the most revenue.
+This table allows us to analyze sales performance by product, category, brand, and department. It is essential for understanding which products drive the most revenue.
 
-## Step 2.4 — Identifying Top Revenue Products
+---
+
+## Step 3 — Creating a Clean Sales Analysis View
 
 ### What we did
-Joined the `order_items` table with the `products` table to analyze product sales and calculate revenue by product.
+Created a reusable analytical view combining `order_items` and `products` tables.
 
 ### Why we did it
-To identify which products generate the highest revenue for the business.
+To create a clean dataset containing product sales information that can be reused for analysis and dashboards.
+
+### What we found
+The view combines product attributes with sales transaction data, filtered to include only completed orders.
+
+### Business Meaning
+This view simplifies future analysis by providing a clean dataset of completed sales transactions with product information.
+
+---
+
+## Step 4.1 — Top Revenue Products
+
+### What we did
+Joined the `order_items` and `products` tables to calculate revenue by product.
+
+### Why we did it
+To identify which products generate the highest revenue.
 
 ### SQL Query Used
 ```sql
@@ -115,63 +136,19 @@ GROUP BY product_name, category
 ORDER BY total_revenue DESC
 LIMIT 10;
 
-What we found
+### What we found
+Revenue fluctuates over time, with a noticeable spike observed in April compared to other months. However, the dataset spans multiple years, and further analysis is required to confirm whether this pattern is seasonal or a one-time occurrence.
 
-The products generating the highest revenue include:
-
-The North Face Apex Bionic Soft Shell Jacket – Men's
-
-Nike Jordan Retro 11 Bred Bootie Socks
-
-Canada Goose Women Expedition Parka
-
-True Religion Men's Straight Jeans
-
-## Step 3 — Creating a Clean Sales Analysis View
+## Step 4.4 — Revenue Trend Over Time
 
 ### What we did
-Created a reusable analytical view combining order_items and products tables.
+Analyzed revenue trends over time by aggregating sales data by year and month.
 
 ### Why we did it
-To create a clean dataset containing product sales information that can be reused for analysis and dashboards.
+To understand long-term business performance and identify growth patterns.
 
 ### What we found
-The view combines product attributes with sales transaction data.
+Revenue and sales volume have shown a consistent upward trend over multiple years, indicating sustained growth in the business.
 
 ### Business Meaning
-This view simplifies future analysis by providing a clean dataset of completed sales transactions with product information.
-Mountain Hardwear Men's Nilas Down Jacket
-
-## Step 4.1 — Revenue by Product Category
-
-### What we did
-Analyzed total revenue and number of items sold by product category using the sales_product_analysis view.
-
-### Why we did it
-To identify which product categories contribute the most to overall revenue.
-
-### What we found
-The top revenue-generating categories include:
-- Outerwear & Coats
-- Jeans
-- Sweaters
-- Swimwear
-- Suits & Sports Coats
-
-### Business Meaning
-Higher-priced categories such as outerwear generate more revenue even with fewer sales. These categories should be prioritized for inventory planning and sales strategies.
-
-## Step 4.3 — Revenue Trend Over Time
-
-### What we did
-Analyzed monthly revenue trends using the sales_product_analysis view.
-
-### Why we did it
-To understand how sales performance changes over time and identify any seasonal patterns.
-
-### What we found
-Revenue fluctuates over time, with a significant spike observed in April compared to other months.
-
-### Business Meaning
-Revenue shows fluctuations over time, with a noticeable spike in April. However, further analysis across the full time range is required to determine if this represents a seasonal trend or a one-time event.
-High-priced outerwear and premium apparel appear to drive a large portion of revenue. Retail managers may want to prioritize inventory availability for these products to avoid potential stockouts.
+The consistent increase in revenue suggests strong and growing customer demand. This presents an opportunity for the business to scale operations, improve inventory management, and invest in high-performing product categories to sustain and accelerate growth.
