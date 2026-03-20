@@ -43,3 +43,14 @@ SELECT
 FROM `nnamdi-hr-analytics-capstone.retail_analytics.sales_product_analysis`
 GROUP BY year, month
 ORDER BY year, month;
+
+-- Step 4.5: Top Brands by Revenue
+
+SELECT
+    brand,
+    SUM(sale_price) AS total_revenue,
+    COUNT(*) AS total_items_sold
+FROM `nnamdi-hr-analytics-capstone.retail_analytics.sales_product_analysis`
+GROUP BY brand
+ORDER BY total_revenue DESC
+LIMIT 10;
