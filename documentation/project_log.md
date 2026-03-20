@@ -112,6 +112,27 @@ The view combines product attributes with sales transaction data, filtered to in
 ### Business Meaning
 This view simplifies future analysis by providing a clean dataset of completed sales transactions with product information.
 
+
+## Step 4.5 — Top Brands by Revenue
+
+### What we did
+Analyzed total revenue and number of items sold by brand using the sales_product_analysis view.
+
+### Why we did it
+To identify which brands contribute the most to overall revenue.
+
+### What we found
+The top revenue-generating brands include:
+- Diesel
+- Calvin Klein
+- Carhartt
+- True Religion
+- 7 For All Mankind
+
+Diesel generated the highest revenue despite selling fewer items than some other brands.
+
+### Business Meaning
+Different brands contribute to revenue through different strategies. Premium brands like Diesel generate high revenue through higher pricing, while brands like Calvin Klein drive revenue through higher sales volume. The business should balance both premium and high-volume brand strategies to maximize revenue.
 ---
 
 ## Step 4.1 — Top Revenue Products
